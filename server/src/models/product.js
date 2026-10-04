@@ -16,7 +16,7 @@ const stockAdjustmentSchema = new mongoose.Schema(
       default: Date.now,
     },
   },
-  { _id: false }
+  { _id: false },
 )
 
 const productSchema = new mongoose.Schema(
@@ -42,7 +42,7 @@ const productSchema = new mongoose.Schema(
       default: 0,
       min: 0,
     },
-    reorderLevel: {
+    minStock: {
       type: Number,
       default: 0,
       min: 0,
@@ -56,7 +56,7 @@ const productSchema = new mongoose.Schema(
       default: [],
     },
   },
-  { timestamps: true }
+  { timestamps: true },
 )
 
 module.exports = mongoose.model("Product", productSchema)

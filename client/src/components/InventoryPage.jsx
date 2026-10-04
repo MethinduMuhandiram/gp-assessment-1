@@ -33,7 +33,7 @@ const InventoryPage = () => {
         sku,
         change,
         reason,
-      })
+      }),
     )
 
     if (completed) {
@@ -42,7 +42,7 @@ const InventoryPage = () => {
       setSuccess(
         mode === "add"
           ? "Stock added successfully"
-          : "Stock removed successfully"
+          : "Stock removed successfully",
       )
     }
   }
@@ -76,7 +76,7 @@ const InventoryPage = () => {
                 </thead>
                 <tbody>
                   {products.map((product) => {
-                    const lowStock = product.stock <= product.reorderLevel
+                    const lowStock = product.stock <= product.minStock
                     return (
                       <tr key={product._id}>
                         <td className="font-monospace">{product.sku}</td>
@@ -88,9 +88,7 @@ const InventoryPage = () => {
                         <td>
                           <span
                             className={`badge ${
-                              lowStock
-                                ? "text-bg-warning"
-                                : "text-bg-success"
+                              lowStock ? "text-bg-warning" : "text-bg-success"
                             }`}
                           >
                             {lowStock ? "Low stock" : "Available"}
@@ -188,9 +186,7 @@ const InventoryPage = () => {
                 required
               />
 
-              {error && (
-                <div className="alert alert-danger py-2">{error}</div>
-              )}
+              {error && <div className="alert alert-danger py-2">{error}</div>}
               {success && (
                 <div className="alert alert-success py-2">{success}</div>
               )}
