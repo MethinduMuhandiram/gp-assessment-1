@@ -4,13 +4,11 @@ const connectDatabase = async () => {
   const url = process.env.MONGODB_URL
 
   if (!url) {
-    throw new Error(
-      "MONGODB_URL is missing. Create server/.env from server/.env.example and set MONGODB_URL."
-    )
+    throw new Error("MONGODB_URL is missing!")
   }
 
   await mongoose.connect(url)
-  console.log("MongoDB connected")
+  console.log("MongoDB connected!")
 }
 
 module.exports = connectDatabase

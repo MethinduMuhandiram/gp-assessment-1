@@ -34,8 +34,8 @@ arrives so setup time is not included in the 30-minute assessment.
 ### Setup
 
 ```bash
-cp server/.env.example server/.env
-cp client/.env.example client/.env
+cp server/.env server/.env
+cp client/.env client/.env
 docker compose up -d
 npm run install:all
 npm run seed
