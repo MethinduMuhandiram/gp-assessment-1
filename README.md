@@ -24,7 +24,7 @@ intentionally contain `TODO` sections.
 
 - Node.js 22
 - npm
-- Docker, or a local MongoDB instance
+- local MongoDB instance
 
 ### Setup
 
